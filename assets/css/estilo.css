@@ -1,3 +1,5 @@
+
+
 *{
     margin: 0;
     padding: 0;
@@ -6,19 +8,60 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-h1{
-    font-size: 50px;
-    color:aqua;
-    text-align:center;
-    margin-top: 30px;
-    margin-bottom: 30px;
+body{
+    min-height: 100vh;
+    background-color: #22314a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 15px;
+}
+
+
+.pokedex{
+    width: 100%;
+    max-width: 900px;
+    background-color: #f13030;
+    border-radius: 26px;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+    overflow: hidden;
+
+    
+}
+
+.pokedex-topo{
+    background-color: #a9d1f7;
+    padding: 20px 26px 16px;
+}
+
+.pokedex-topo h1{
+    font-size: 46px;
+    color: #16233a;
+    text-align: center;
+    margin: 4px 0 10px;
+}
+
+#rank{
+    color: #0467ad;
+    font-size: 15px;
+}
+
+.pokedex-corpo{
+    padding: 24px 22px 20px;
+}
+
+
+.pokedex-tela{
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: inset 0 0 0 4px #ffd3d3;
 }
 
 #jogo{
-    width: 90%;
+    width: 100%;
     height: 450px;
-    border: 2px solid black;
-    margin: 0 auto;
+    border-radius: 12px;
     background-image: url(../img/cenario.png);
     background-position: 0px -250px;
     position: relative;
@@ -29,24 +72,151 @@ h1{
     margin-left: 10px;
     font-size: 20px;
 }
+.placar{
+    display: inline;
+}
+.poke1{
+    width: 40px;
+}
+
 
 #personagem{
     width: 153px;
     height: 102px;
-    background-image: url(../img/p1.png);
-    background-size: 100% 100%;
+    background-image: url(../img/jogador.png);
+    background-size: 400% 400%;
+
+    background-position-y: -64px;
+    background-position-x: 0px;
+
     position: absolute;
     bottom: 70px;
     left: 2%;
+
+    animation: movimento 0.4s infinite;
+    animation-timing-function: step-end;
+    animation-delay: 0s;
+
 }
+
+@keyframes movimento {
+  0% {
+    background-position-x: 0px;
+  }
+  25% {
+    background-position-x: -151px;
+  }
+  50% {
+    background-position-x: -305px;
+  }
+  100% {
+    background-position-x: -453px;
+  }
+}
+/* .personagem.pulo{
+    animation: movimento_pular 0.4s infinite;
+    animation-timing-function: step-end;
+    animation-delay: 0s;
+}
+
+@keyframes movimento_pular{
+  0% {
+    background-position-x: 0px;
+    background-position-y: -224px;
+  }
+  25% {
+    background-position-x: -151px;
+    background-position-y: -224px;
+  }
+  50% {
+    background-position-x: -305px;
+    background-position-y: -224px;
+  }
+  100% {
+    background-position-x: -453px;
+    background-position-y: -224px;
+  }
+} */
 
 #vilao{
     width: 153px;
     height: 102px;
-    background-image: url(../img/v1.png);
-    background-size: 100% 100%;
+    background-image: url(../img/vilao.png);
+    background-size: 400% 450%;
+    background-position-x: -7px;
+    background-position-y:-85px ;
     position: absolute;
     bottom: 70px;
-    right: -153px;
-    
+    right: -153px; 
+
+    animation: andar 0.4s infinite;
+    animation-timing-function: step-end;
+    animation-delay: 0s;
+
+}
+@keyframes andar {
+  0% {
+    background-position-x: -7px;
+  }
+  25% {
+    background-position-x: -158px;
+  }
+  50% {
+    background-position-x: -304px;
+  }
+  75%{
+    background-position-x: -452px;
+  }
+  100% {
+    background-position-x: -7px;
+  }
+}
+
+
+.pokedex-detalhes{
+    margin-top: 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.botao-redondo{
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: #40474f;
+    flex-shrink: 0;
+}
+
+.barra-verde{
+    flex: 1;
+    height: 20px;
+    border-radius: 12px;
+    background-color: #34c759;
+}
+
+.botao-quadrado{
+    width: 26px;
+    height: 26px;
+    border-radius: 4px;
+    background-color: #2b2f36;
+    flex-shrink: 0;
+}
+
+.imagem_gameOver{
+    position: fixed;
+    display: none;
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+}
+.pontuacaoVida{
+    display: flexbox;
+    margin-left: 10px;
+}
+.pokebola{
+    width: 30px;
+    height: 30px;
 }

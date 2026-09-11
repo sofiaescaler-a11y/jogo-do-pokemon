@@ -5,18 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo do pokemon</title>
     <link rel="stylesheet" href="assets/css/estilo.css">
-    
 </head>
 <body>
-    <h1>Jogo de Pokemon</h1>
+    <img class="imagem_gameOver" src="assets/img/gameOver.jpg">
+    <div class="pokedex">
+        <div class="pokedex-topo">
+            <h1>Jogo de Pokemon</h1>
+            <p id="rank">Pontuação maxima: <span class="pont">0</span></p>
+        </div>
+        <div class="pokedex-corpo">
+            <div class="pokedex-tela">
+                <div id="jogo">
+                    <h2 class="pontos">Pontos <span id ="pontos">0</span></h2>
+                    
+                    <h2 class="vidas">Vidas: <span id="vidas">3</span></h2>
+                    <div class="pontuacaoVida">
+                        <img class="pokebola" src="assets/img/pokebola.png">
+                        <img class="pokebola" src="assets/img/pokebola.png">
+                        <img class="pokebola" src="assets/img/pokebola.png">
+                    </div>
+                    <div id="personagem"></div>
+                    <div id="vilao"></div>
+                </div>
+            </div>
 
-    <div id="jogo">
-        <h2 class="pontos">Pontos 100</h2>
-        <h2 class="vidas">Vidas: 3</h2>
+            <div class="pokedex-detalhes">
+                <span class="botao-redondo"></span>
+                <span class="barra-verde"></span>
+                <span class="botao-quadrado"></span>
+            </div>
 
-        <div id="personagem"></div>
-        <div id="vilao"></div>
+        </div>
+
     </div>
+
     <script src="assets/js/jogo.js" defer></script>
 </body>
 </html>
